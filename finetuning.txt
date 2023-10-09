@@ -1,0 +1,27 @@
+(nanogpt) C:\Users\User\workspace\nanoGPT>python train.py config\finetune_shakespeare.py --block_size=512 --device=cuda --batch_size=6
+
+number of parameters: 1555.97M
+Downloading: 100%|█████████████████████████████████████████████████████| 689/689 [00:00<00:00, 349kB/s]
+Downloading: 100%|████████████████████████████████████████████████| 6.43G/6.43G [21:20<00:00, 5.02MB/s]
+Downloading: 100%|████████████████████████████████████████████████████| 124/124 [00:00<00:00, 62.4kB/s]
+Traceback (most recent call last):
+  File "C:\Users\User\workspace\nanoGPT\train.py", line 183, in <module>
+    model.to(device)
+  File "C:\Users\User\miniconda3\envs\nanogpt\lib\site-packages\torch\nn\modules\module.py", line 989, in to
+    return self._apply(convert)
+  File "C:\Users\User\miniconda3\envs\nanogpt\lib\site-packages\torch\nn\modules\module.py", line 641, in _apply
+    module._apply(fn)
+  File "C:\Users\User\miniconda3\envs\nanogpt\lib\site-packages\torch\nn\modules\module.py", line 641, in _apply
+    module._apply(fn)
+  File "C:\Users\User\miniconda3\envs\nanogpt\lib\site-packages\torch\nn\modules\module.py", line 641, in _apply
+    module._apply(fn)
+  [Previous line repeated 2 more times]
+  File "C:\Users\User\miniconda3\envs\nanogpt\lib\site-packages\torch\nn\modules\module.py", line 664, in _apply
+    param_applied = fn(param)
+  File "C:\Users\User\miniconda3\envs\nanogpt\lib\site-packages\torch\nn\modules\module.py", line 987, in convert
+    return t.to(device, dtype if t.is_floating_point() or t.is_complex() else None, non_blocking)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 40.00 MiB (GPU 0; 4.00 GiB total capacity; 3.50 GiB already allocated; 0 bytes free; 3.54 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+
+
+
+https://blog.paperspace.com/pytorch-memory-multi-gpu-debugging/
