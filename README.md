@@ -1,2 +1,1 @@
-TODO 
-Description of the NanoGPT for tiny_pushkin project and datasets
+Training karpathy/nanoGPT on A. Puhskin's poems text corpus
